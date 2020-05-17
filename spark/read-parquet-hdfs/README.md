@@ -212,8 +212,9 @@ No differences noted, all run times were more or less the same.
 
 ### Average DataFrame (< 100 GB), partitioned
 
-Lazy val [2] took either the same time or longer than original read [1], for both grouping
-Lazy val in Try [3] took *5-12%* faster than original read, and in some cases was twice as fast as regular lazy val [2].
+Lazy val [2] took either the same time or longer than original read [1], for both grouping.
+
+Lazy val in Try [3] was *5-12%* faster than original read [1], and in some cases was twice as fast as regular lazy val [2].
 
 _Winner_: Lazy val in Try [3]
 
@@ -227,11 +228,12 @@ Both lazy val [2] and lazy val in Try [3] took much less time, showing improveme
 
 Lazy val [2] performed better in most of the runs cases but also had much more variance in results, reducing the run time up to *5-20%* in comparison with original read [1].
 
-Lazy val in Try [3] showed less impressive but more stable *10-15%* improvement to [1].
+Lazy val in Try [3] showed less impressive but more stable *10-15%* improvement comparing to original read [1].
 
 _Winner_: No clear winner, more like a tie
 
 ### TL;DR Summary
 
 Use lazy variables when reading your parquet files, it will improve the performance in most of the cases.
-My personal preference is to use `lazy Try` because it shows more stable results on every size of DataFrame and order of grouping columns, whereas `lazy` may not perform well on some DataFrames and only shines on really big data (> 500 GB).
+
+My personal preference is to use `lazy val in Try` because it shows more stable results on every size of DataFrame and order of grouping columns, whereas `lazy val` may not perform well on some DataFrames and only shines on really big data (> 500 GB).
