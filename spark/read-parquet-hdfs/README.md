@@ -107,9 +107,9 @@ def timer[R](block: => R): R = {
 }
 ```
 
-## So what was the comparison about?
+## How did I compare the run times? What was the comparison about?
 
-So I performed the same set of operations/actions on each of the DataFrames (small, average and large) and measured how long it took. 
+I performed the same set of operations/actions on each of the DataFrames (small, average and large) and measured how long it took. 
 
 I've run the same code snippet for about 8-10 times and get the averaged results, and I compared the outcomes.
 
