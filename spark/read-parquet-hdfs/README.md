@@ -202,6 +202,11 @@ timer {
 }
 ```
 
+## What versions of Spark/Scala does this apply?
+
+This behaviour has been observed for all the versions of Spark from 2.2.x up to 2.4.x inclusive.
+This has been tested with Scala 2.11 only, and the results may differ for Spark 2.4.x and above running with Scala 2.12.
+
 ## Results
 
 Based on average run time
